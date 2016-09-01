@@ -8,8 +8,9 @@ feature 'attacks oponent' do
   #   expect{@player_two_hp}.to change{Counter.count}.by(2)
   # end
 
-  scenrio 'player 1 gets confirmation after attacking player 2' do
+  scenario 'player 1 gets confirmation after attacking player 2' do
     sign_in_and_play
-    expect(page).to have_content("#{@user_name_one} attacks #{@user_name_two}!")
+    click_button "Attack"
+    expect(page).to have_content("James attacks Tam!")
   end
 end
