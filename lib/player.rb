@@ -7,7 +7,7 @@ class Player
     @hp = 100
   end
 
-  def reduce_hp_by(n = 10)
+  def reduce_hp_by(n)
     @hp -= n
   end
 end

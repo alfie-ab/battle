@@ -9,4 +9,9 @@ describe Player do
     expect(subject.name).to eq "Alfie"
   end
 
+  it 'should reduce hp by 10' do
+    subject.reduce_hp_by(10)
+    expect(subject.hp).to eq 90
+  end
+
 end
