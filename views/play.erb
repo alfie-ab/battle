@@ -1,2 +1,6 @@
-<%= "Welcome to the game where #{@user_name_one} plays #{@user_name_two}" %>
+<%= "Welcome to the game where #{@user_name_one} plays #{@user_name_two}\n" %>
 <%= @user_name_two %>'s Hit points: 100
+
+<form action="/attack" method="post">
+  <input type="submit" value="Attack">
+</form>
