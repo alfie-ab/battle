@@ -1,3 +1,10 @@
+<form action="/play" method="post">
 <%= "#{@game.player1.name} attacks #{@game.player2.name}!" %>
 
 <%= "#{@game.player2.name}'s hp is now #{@game.player2.hp}!" %>
+
+<div>
+  <button type="submit">Switch players!</button>
+</div>
+
+</form>

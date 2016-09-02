@@ -15,4 +15,5 @@ feature 'attacks oponent' do
     click_button "Attack"
     expect(page).to have_content("Tam's hp is now 90!")
   end
+
 end

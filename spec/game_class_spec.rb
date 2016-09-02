@@ -7,7 +7,7 @@ describe Game do
   subject(:game) {Game.new(player, player)}
 
   it 'should respond to the method reduce_hp_by' do
-    game.attack
+    game.attack(player)
     expect(player).to have_received(:reduce_hp_by)
   end
 

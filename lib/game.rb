@@ -8,7 +8,8 @@ class Game
     @player2 = player2
   end
 
-  def attack
-    @player2.reduce_hp_by(10)
+  def attack(player)
+    player.reduce_hp_by(10)
   end
+
 end
