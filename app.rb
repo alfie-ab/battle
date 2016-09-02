@@ -28,9 +28,17 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    @game = $game
-    @game.attack
-    erb(:attack)
+   @game = $game
+   @game.attack
+   if @game.continue? == true
+      redirect '/game_over'
+   else
+     erb(:attack)
+   end
+  end
+
+  get '/game_over' do
+    erb(:game_over)
   end
 
   run! if app_file == $0

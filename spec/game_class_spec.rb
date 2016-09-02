@@ -4,8 +4,8 @@ require 'game'
 describe Game do
   let(:player_class) {double :player_class, new: player1}
   let(:player_class2) {double :player_class, new: player2}
-  let(:player1) { double :player1, reduce_hp_by: 0 }
-  let(:player2) { double :player2, reduce_hp_by: 90 }
+  let(:player1) { double :player1, reduce_hp_by: 90, hp: 0 }
+  let(:player2) { double :player2, reduce_hp_by: 90, hp: 50 }
   subject(:game) {described_class.new(player_class.new, player_class2.new)}
 
   it 'should respond to the method reduce_hp_by' do
@@ -35,13 +35,8 @@ describe Game do
     expect(game.turn).to eq player1
   end
 
-  it 'should return true if the game should continue' do
-    expect(game.continue?).to eq true
-  end
-
   it 'should return false if the game should stop' do
-    game.attack
-    expect(game.continue?).to eq false
+    expect(game.continue?).to eq true
   end
 
 end

@@ -20,4 +20,8 @@ class Game
   def return_opponent
     turn == player1 ? player2 : player1
   end
+
+  def continue?
+    @player1.hp == 0|| @player2.hp == 0
+  end
 end
