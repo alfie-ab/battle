@@ -15,4 +15,12 @@ feature 'attacks oponent' do
     click_button "Attack"
     expect(page).to have_content("Tam's hp is now 90!")
   end
+
+  scenario 'player 1 switches with player 2' do
+    sign_in_and_play
+    click_button "Attack"
+    click_button "Switch players"
+    expect(page).to have_content("It is now Tam's turn!")
+  end
+
 end
